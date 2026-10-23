@@ -33,3 +33,11 @@ Drowsiness-Detection-ML-Project/
 ├── pdf_extract.txt
 ├── .gitignore
 └── Drowsiness-Detection-ML-Project-master/
+
+## Current Status
+
+- [x] Mouth preprocessing notebook
+- [x] CNN training notebook
+- [x] Eye analysis notebook
+- [ ] Complete integration of eye and mouth signals
+- [ ] Fully tested real-time webcam detection
