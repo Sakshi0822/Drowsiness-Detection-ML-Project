@@ -1,40 +1,35 @@
-# Drowsiness Detection ML Project
+# Driver Drowsiness Detection ML Project
 
-This project contains the separate pieces of a webcam-based driver drowsiness detection workflow. The trained mouth-state CNN and eye-based EAR analysis are available, while the final integrated drowsiness detector is still under development.
+A Python-based machine learning project focused on driver drowsiness detection using mouth-state analysis and eye movement analysis. The project uses a Convolutional Neural Network (CNN) for mouth-state classification and Eye Aspect Ratio (EAR) for monitoring eye closure.
+
+The project is being developed toward an integrated, real-time webcam-based drowsiness detection system.
+
+## Project Objectives
+
+- Detect mouth states associated with yawning.
+- Train a CNN model for mouth-state classification.
+- Analyze eye landmarks and calculate the Eye Aspect Ratio (EAR).
+- Study eye closure, blink patterns, and closure duration.
+- Combine eye and mouth analysis into a unified drowsiness detection workflow.
 
 ## Workflow
 
-1. Dataset Preparation: YawDD preparation and frame labeling are preserved in `archive/notebooks/`.
-2. Mouth Preprocessing: `02_mouth_preprocessing.ipynb` detects faces, extracts mouth landmarks, crops mouths, resizes them to 128 x 128, and creates the mouth dataset.
-3. Mouth CNN Training: `03_mouth_cnn_training.ipynb` handles splitting, CNN training, checkpointing, evaluation, confusion matrices, reports, and curves.
-4. Live Mouth Inference: `archive/notebooks/live_mouth_inference.ipynb` contains the current standalone mouth inference workflow.
-5. Eye Analysis: `04_eye_analysis.ipynb` covers MediaPipe eye landmarks, EAR, eye open/closed classification, closure duration, blink analysis, and eye-based drowsiness scoring.
-6. Future Integrated Drowsiness System: eye and mouth signals will be combined in a later stage.
+1. **Mouth Preprocessing:** Extract mouth regions from images and prepare them for CNN training.
+2. **Mouth CNN Training:** Train and evaluate a CNN model for mouth-state classification.
+3. **Eye Analysis:** Use MediaPipe landmarks to calculate EAR and analyze eye closure.
+4. **Integrated Drowsiness System:** Develop a combined approach using eye and mouth signals.
+5. **Real-Time Detection:** Work toward webcam-based drowsiness monitoring.
 
 ## Project Structure
 
 ```text
-01_dataset_preparation.ipynb  # Missing; no replacement was invented
-02_mouth_preprocessing.ipynb
-03_mouth_cnn_training.ipynb
-04_eye_analysis.ipynb
-archive/notebooks/             # Experimental and live-inference notebooks
-models/mouth_cnn_best.pth
-models/archive/                # Older duplicate model files
-assets/face_landmarker.task
-docs/                          # Reference paper
-frames/                        # Local dataset and generated metadata
-```
-
-The large image dataset is intentionally excluded from this Git repository. Supply the existing `frames/dataset` and `frames/mouth_dataset` directories separately before running the notebooks. The dataset was not moved, deleted, renamed, or modified during this cleanup.
-
-## Current Status
-
-At this stage the project contains:
-
-- a trained mouth-state CNN
-- standalone live mouth inference
-- eye-based EAR analysis
-- eye closure analysis
-
-The complete integrated drowsiness detector is not finished yet.
+Drowsiness-Detection-ML-Project/
+├── 02_mouth_preprocessing.ipynb
+├── 03_mouth_cnn_training.ipynb
+├── 04_eye_analysis.ipynb
+├── 05_integrated_drowsiness_system.ipynb
+├── README.md
+├── run_notebook.cmd
+├── pdf_extract.txt
+├── .gitignore
+└── Drowsiness-Detection-ML-Project-master/
